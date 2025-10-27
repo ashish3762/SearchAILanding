@@ -27,7 +27,7 @@ export default function WaitlistForm() {
 
     try {
       // Submit to Google Apps Script
-      const response = await fetch("https://script.google.com/macros/s/AKfycbxBY7qqdmn7nBDzD-c7kC31KeSuKxs8q_5XlSdArMpJOV_SQKnEN_PRjtTwHjQfx1Fohg/exec", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycby5ufxvHb1-j68M5hGfeZbYRRIT3yGSpznbJGKq9os5zzH7GgNEK_6Uhjd21vYrJ_j_2g/exec", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
