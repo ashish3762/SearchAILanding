@@ -26,8 +26,8 @@ export default function WaitlistForm() {
     }
 
     try {
-      // Submit to Google Apps Script
-      const response = await fetch("https://script.google.com/macros/s/AKfycby5ufxvHb1-j68M5hGfeZbYRRIT3yGSpznbJGKq9os5zzH7GgNEK_6Uhjd21vYrJ_j_2g/exec", {
+      // Submit to our API route (which will forward to Google Apps Script)
+      const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +40,8 @@ export default function WaitlistForm() {
         setEmail("")
         setTimeout(() => setIsSubmitted(false), 5000)
       } else {
-        setError("Something went wrong. Please try again.")
+        const errorData = await response.json().catch(() => ({}))
+        setError(errorData.error || "Something went wrong. Please try again.")
       }
     } catch (err) {
       console.error("Submission error:", err)
@@ -72,7 +73,7 @@ export default function WaitlistForm() {
       </div>
       {isSubmitted && (
         <p className="text-sm text-muted-foreground mt-3 animate-fade-in">
-          ✓ Thanks for joining! Check your email for updates.
+          ✓ You’re on the list. We can’t wait to show you what’s coming..
         </p>
       )}
       {error && <p className="text-sm text-destructive mt-3">{error}</p>}
