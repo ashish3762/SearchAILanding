@@ -1,24 +1,27 @@
 "use client"
 import WaitlistForm from "@/components/waitlist-form"
+import DotGrid from "../components/DotGrid"
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col">
-      <header className="fixed top-0 left-0 right-0 z-50 px-6 md:px-8 py-6 backdrop-blur-sm bg-background/80 border-b border-border/50">
-        <div className="mx-auto">
-          <h1 className="text-xl md:text-3xl max-w-4xl mx-auto font-bold tracking-tight">SearchAI</h1>
-        </div>
-      </header>
-
       {/* Hero Section */}
-      <section className="flex-1 flex items-center justify-center px-4 py-20 md:py-64 relative mt-20">
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage:
-              'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fillRule="evenodd"%3E%3Cg fill="%23ffffff" fillOpacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
-            backgroundSize: "60px 60px",
-          }}
+      <section className="flex-1 flex items-center justify-center px-4 py-20 md:py-64 relative">
+        {/* Logo positioned within the dot grid background */}
+        <div className="absolute top-6 left-6 md:left-8 z-10">
+          <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white">SearchAI</h1>
+        </div>
+
+        <DotGrid
+          dotSize={5}
+          gap={20}
+          baseColor="rgba(25, 25, 25, 1)"
+          activeColor="rgba(145, 145, 145, 1)"
+          proximity={120}
+          shockRadius={250}
+          shockStrength={3}
+          resistance={500}
+          returnDuration={1.2}
         />
         <div className="w-full max-w-5xl text-center space-y-8 animate-fade-in-up relative z-10">
           {/* Main Tagline */}
@@ -45,14 +48,6 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="px-4 py-20 md:py-32 border-t border-border relative">
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage:
-              'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fillRule="evenodd"%3E%3Cg fill="%23ffffff" fillOpacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
-            backgroundSize: "60px 60px",
-          }}
-        />
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             {/* Feature 1 */}
@@ -92,14 +87,6 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="px-4 py-20 md:py-32 border-t border-border relative">
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage:
-              'url(\'data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fillRule="evenodd"%3E%3Cg fill="%23ffffff" fillOpacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\')',
-            backgroundSize: "60px 60px",
-          }}
-        />
         <div className="max-w-2xl mx-auto text-center space-y-8 animate-fade-in relative z-10">
           <h2 className="text-2xl md:text-4xl font-light tracking-tight">Ready to begin your journey?</h2>
           <p className="text-base md:text-lg text-muted-foreground font-light">
