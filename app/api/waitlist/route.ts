@@ -13,9 +13,19 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Get Google Apps Script URL from environment variable
+    const scriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL
+    if (!scriptUrl) {
+      console.error('GOOGLE_APPS_SCRIPT_URL environment variable is not set')
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      )
+    }
+
     // Forward to Google Apps Script
     const response = await fetch(
-      'https://script.google.com/macros/s/AKfycby5ufxvHb1-j68M5hGfeZbYRRIT3yGSpznbJGKq9os5zzH7GgNEK_6Uhjd21vYrJ_j_2g/exec',
+      scriptUrl,
       {
         method: 'POST',
         headers: {
