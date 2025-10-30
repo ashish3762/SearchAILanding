@@ -35,7 +35,7 @@ export default function Home() {
           </div>
 
           {/* Email Signup */}
-          <div className="pt-8">
+          <div className="pt-8" id="waitlist">
             <WaitlistForm />
           </div>
 
@@ -95,10 +95,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border px-4 py-12 md:py-16 mt-auto relative">
-          <p className="text-sm text-muted-foreground text-center">© 2025 SearchAI. All rights reserved.</p>
-      </footer>
     </main>
   )
 }
