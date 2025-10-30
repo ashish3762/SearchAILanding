@@ -1,11 +1,20 @@
 # SearchAI - Next.js Project
 
 ## Overview
-SearchAI is a Next.js 16 application that helps users discover self-awareness through guided questions. The app features a waitlist signup that integrates with Google Apps Script for data collection.
+SearchAI is a Next.js 16 application that helps users discover self-awareness through guided questions. The app features a waitlist signup integrated with Google Apps Script, comprehensive SEO-optimized pages, and a blog section with dynamic routing.
 
-**Current State:** Successfully migrated from Vercel to Replit and running without errors.
+**Current State:** Successfully migrated from Vercel to Replit, expanded with SEO pages and blog functionality, running without errors.
 
 ## Recent Changes (October 30, 2025)
+
+### SEO Pages & Blog Expansion
+- **New Pages**: Added About, Contact, Services, Blogs (listing), and dynamic blog posts at `/blogs/[slug]`
+- **Navigation Component**: Created responsive navigation with desktop/mobile views and active link highlighting
+- **Blog System**: Implemented blog data structure in `lib/blogs.ts` with mock posts for development
+- **Contact Form**: Built functional contact form component with client-side validation
+- **SEO Optimization**: All pages include comprehensive metadata with Open Graph tags for social sharing
+- **Design Consistency**: All new pages follow the existing minimal dark theme design pattern
+- **Accessibility**: Semantic HTML, proper labels, and responsive Tailwind CSS classes throughout
 
 ### Vercel to Replit Migration
 - **Security Enhancement**: Moved hardcoded Google Apps Script URL to environment variable (`GOOGLE_APPS_SCRIPT_URL`)
@@ -28,14 +37,23 @@ SearchAI is a Next.js 16 application that helps users discover self-awareness th
 ```
 /
 ├── app/                    # Next.js App Router
+│   ├── about/             # About page
 │   ├── api/               # API routes
 │   │   └── waitlist/      # Waitlist submission endpoint
-│   ├── layout.tsx         # Root layout
+│   ├── blogs/             # Blog section
+│   │   ├── [slug]/        # Dynamic blog post route
+│   │   └── page.tsx       # Blog listing page
+│   ├── contact/           # Contact page
+│   ├── services/          # Services page
+│   ├── layout.tsx         # Root layout with navigation
 │   ├── page.tsx           # Home page
 │   └── globals.css        # Global styles
 ├── components/            # React components
+│   ├── contact-form.tsx   # Client-side contact form with validation
+│   └── navigation.tsx     # Responsive navigation component
 ├── hooks/                 # Custom React hooks
 ├── lib/                   # Utility functions
+│   └── blogs.ts           # Blog data and helper functions
 ├── public/               # Static assets
 └── styles/               # Additional styles
 ```
@@ -43,7 +61,16 @@ SearchAI is a Next.js 16 application that helps users discover self-awareness th
 ### Key Features
 1. **Landing Page**: Hero section with tagline and waitlist form
 2. **Waitlist API**: Server-side endpoint that validates emails and forwards to Google Apps Script
-3. **Responsive Design**: Mobile-first approach using Tailwind CSS
+3. **About Page**: Company mission and vision with SEO metadata
+4. **Services Page**: Three core service offerings displayed in card layout
+5. **Contact Page**: Functional contact form with email validation
+6. **Blog System**: 
+   - Blog listing page showing all posts with images and descriptions
+   - Dynamic routing for individual blog posts at `/blogs/[slug]`
+   - Static generation support with `generateStaticParams`
+   - Full SEO metadata including Open Graph for social sharing
+7. **Responsive Navigation**: Desktop and mobile-friendly menu with active state highlighting
+8. **Responsive Design**: Mobile-first approach using Tailwind CSS throughout all pages
 
 ## Environment Configuration
 
