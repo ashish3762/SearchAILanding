@@ -3,9 +3,18 @@
 ## Overview
 SearchAI is a Next.js 16 application that helps users discover self-awareness through guided questions. The app features a waitlist signup integrated with Google Apps Script, comprehensive SEO-optimized pages, and a blog section with dynamic routing.
 
-**Current State:** Successfully migrated from Vercel to Replit, expanded with SEO pages and blog functionality, running without errors.
+**Current State:** Successfully migrated from Vercel to Replit, expanded with SEO pages and blog functionality, enhanced with Google site verification, favicon, social media integration, and fully functional dynamic blog routing. Running without errors.
 
-## Recent Changes (October 30, 2025)
+## Recent Changes (October 31, 2025)
+
+### SEO & Social Media Enhancements
+- **Google Site Verification**: Added Google site verification meta tag in metadata export for Search Console verification
+- **Favicon**: Added custom favicon to public folder and integrated via Next.js metadata icons API
+- **Social Media Footer**: Added horizontal social media icon links to footer for X (Twitter), Reddit, Instagram, and Threads with hover effects matching dark theme
+- **Hero Cleanup**: Removed duplicate "SearchAI" logo from landing page hero section (kept only in navigation)
+- **Blog Routing Fix**: Updated dynamic blog routing to work with Next.js 15+ async params pattern for `/blogs/[slug]` routes
+
+## Previous Changes (October 30, 2025)
 
 ### SEO Pages & Blog Expansion
 - **New Pages**: Added About, Contact, Services, Blogs (listing), and dynamic blog posts at `/blogs/[slug]`
