@@ -13,6 +13,7 @@ SearchAI is a Next.js 16 application that helps users discover self-awareness th
 - **Social Media Footer**: Added horizontal social media icon links to footer for X (Twitter), Reddit, Instagram, and Threads with hover effects matching dark theme
 - **Hero Cleanup**: Removed duplicate "SearchAI" logo from landing page hero section (kept only in navigation)
 - **Blog Routing Fix**: Updated dynamic blog routing to work with Next.js 15+ async params pattern for `/blogs/[slug]` routes
+- **DotGrid Bug Fix**: Fixed null reference error in DotGrid component by adding proper null checks before accessing canvasRef.current.getBoundingClientRect()
 
 ## Previous Changes (October 30, 2025)
 
