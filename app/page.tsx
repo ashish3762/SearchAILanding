@@ -7,11 +7,6 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground flex flex-col">
       {/* Hero Section */}
       <section className="flex-1 flex items-center justify-center px-4 py-20 md:py-64 relative">
-        {/* Logo positioned within the dot grid background */}
-        <div className="absolute top-6 left-6 md:left-8 z-10">
-          <h1 className="text-xl md:text-3xl font-bold tracking-tight text-white">SearchAI</h1>
-        </div>
-
         <DotGrid
           dotSize={5}
           gap={20}
