@@ -36,11 +36,11 @@ export default function ContactPage() {
           <div className="mt-16 pt-16 border-t border-border space-y-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <h2 className="text-xl font-light tracking-tight text-center">Other Ways to Connect</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-2 text-center md:text-left">
+              <div className="space-y-2 text-center">
                 <h3 className="text-sm tracking-widest uppercase text-muted-foreground">Email</h3>
                 <p className="font-light text-foreground/80">hello@searchai.com</p>
               </div>
-              <div className="space-y-2 text-center md:text-left">
+              <div className="space-y-2 text-center">
                 <h3 className="text-sm tracking-widest uppercase text-muted-foreground">Response Time</h3>
                 <p className="font-light text-foreground/80">Within 24-48 hours</p>
               </div>
