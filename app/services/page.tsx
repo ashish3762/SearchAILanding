@@ -128,7 +128,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="px-4 py-20 md:py-32 border-t border-border">
+      {/* <section className="px-4 py-20 md:py-32 border-t border-border">
         <div className="max-w-2xl mx-auto text-center space-y-8 animate-fade-in">
           <h2 className="text-2xl md:text-4xl font-light tracking-tight">
             Ready to Begin?
@@ -145,7 +145,7 @@ export default function ServicesPage() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   )
 }

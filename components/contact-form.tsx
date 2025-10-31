@@ -19,20 +19,29 @@ export default function ContactForm() {
     e.preventDefault()
     setError("")
     setIsLoading(true)
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(formData.email)) {
-      setError("Please enter a valid email address.")
-      setIsLoading(false)
-      return
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        setError(errorData.error || "Something went wrong. Please try again.");
+        setIsLoading(false);
+        return;
+      }
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      console.error("Submission error:", err);
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
-
-    if (formData.message.length < 10) {
-      setError("Please provide a message with at least 10 characters.")
-      setIsLoading(false)
-      return
-    }
-
     try {
       await new Promise(resolve => setTimeout(resolve, 1500))
       
