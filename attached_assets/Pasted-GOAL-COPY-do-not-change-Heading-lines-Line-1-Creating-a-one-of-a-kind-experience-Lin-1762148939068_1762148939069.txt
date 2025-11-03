@@ -1,0 +1,50 @@
+GOAL COPY (do not change):
+- Heading lines:
+  Line 1: "Creating a one-of-a-kind experience"
+  Line 2: "For your mind"
+- Sub-heading: "Reflect. Grow. Understand yourself deeper."
+- Email placeholder: "Enter your email"
+- Small line under the input: "Limited early access. By invitation only."
+- Footer: "Built by thinkers, for thinkers."
+
+SEO META (place in app/layout.tsx metadata or <Head>):
+<title>SearchAI Reflect, Grow, and Understand Yourself Deeper</title>
+<meta name="description" content="SearchAI helps you explore your thoughts through guided conversations. Join the waitlist for a one-of-a-kind introspective AI experience.">
+<meta name="keywords" content="self reflection app, personal growth ai, ai journaling, self awareness tool, ai mental wellness, Ai assisted thinking app, mindful conversation app">
+
+NAVBAR / LOGO BEHAVIOR (explicit)
+1. Use the existing favicon file as the logo:
+   - Use the image at `/favicon.ico` (public favicon path).
+   - In `components/Header.tsx` render it as:
+     `<img src="/favicon.ico" alt="SearchAI logo" width={40} height={40} className="rounded-full border border-gray-700" />`
+   - Add an optional wordmark "SearchAI" to the right of the mark (visible on tablet+; hidden on small screens).
+   - Make the logo clickable: link to `/` and include `aria-label="SearchAI home"`.
+   - Hover state: subtle scale (1.03) and faint glow; transition ~180ms.
+   - Keep the favicon usage only for the header image and keep the existing `<link rel="icon" href="/favicon.ico">` in `app/layout.tsx` (do not remove).
+
+2. Right-side group (social icons + contact email):
+   - Layout: `[icon_x] [icon_instagram] [icon_reddit] [contact email]`
+   - Contact email: use `NEXT_PUBLIC_CONTACT_EMAIL` if present; fallback to `contact@searchai.example`. If repo already contains a contact email, use that; otherwise include instructions in a short comment showing where to replace it.
+   - Social icons: inline SVGs with `aria-label`, small size ~18–20px, muted color, subtle lift on hover.
+   - On tiny screens hide the wordmark and optionally hide the email (still reachable via an `@` icon linking to `mailto:`).
+
+3. Accessibility & responsiveness:
+   - Use `<nav>` wrapper with semantic markup.
+   - All links/buttons have `aria-label` and visible focus styles.
+   - Use `prefers-reduced-motion` to disable entrance animations for users who opt out.
+
+
+
+
+ANIMATIONS & INTERACTIVITY (subtle)
+- Hero + subheading + form: fade-in + translateY (staggered).
+- Input: focus glow.
+- Button: soft glow + slight scale on hover.
+- Social icons: small lift and opacity change on hover.
+- Background radial glow reacts to mouse movement (small effect).
+- Respect `prefers-reduced-motion`.
+
+
+
+
+Goal: Single minimal page, exact copy, calm modern look, navbar uses your project `favicon.ico` as the logo mark, and header contains social icons + contact email on the right with subtle interactive transitions.

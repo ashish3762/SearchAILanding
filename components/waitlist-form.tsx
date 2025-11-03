@@ -17,7 +17,6 @@ export default function WaitlistForm() {
     setError("")
     setIsLoading(true)
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(email)) {
       setError("Please enter a valid email address.")
@@ -26,7 +25,6 @@ export default function WaitlistForm() {
     }
 
     try {
-      // Submit to our API route (which will forward to Google Apps Script)
       const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: {
@@ -52,28 +50,37 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto space-y-3">
       <div className="flex flex-col sm:flex-row gap-3">
+        <label htmlFor="email-input" className="sr-only">
+          Email address
+        </label>
         <Input
+          id="email-input"
           type="email"
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
           disabled={isLoading}
-          className="flex-1 bg-card border-border text-foreground placeholder:text-muted-foreground/50 focus:border-foreground transition-colors"
+          aria-label="Email address for waitlist"
+          className="flex-1 bg-card/50 border-border text-foreground placeholder:text-muted-foreground/50 focus:border-foreground/50 focus:ring-2 focus:ring-foreground/20 transition-all duration-180"
         />
         <Button
           type="submit"
           disabled={isLoading || !email}
-          className="bg-foreground text-background hover:bg-foreground/90 transition-all duration-300 whitespace-nowrap"
+          className="bg-foreground text-background hover:bg-foreground/90 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-180 whitespace-nowrap"
         >
           {isLoading ? "Joining..." : "Join the waitlist"}
         </Button>
       </div>
+      
+      {/* Small line under input */}
+      <p className="text-xs text-muted-foreground/60 text-center">Limited early access. By invitation only.</p>
+      
       {isSubmitted && (
         <p className="text-sm text-muted-foreground mt-3 animate-fade-in">
-          ✓ You’re on the list. We can’t wait to show you what’s coming..
+          ✓ You're on the list. We can't wait to show you what's coming.
         </p>
       )}
       {error && <p className="text-sm text-destructive mt-3">{error}</p>}

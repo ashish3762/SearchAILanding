@@ -1,0 +1,92 @@
+Update the Next.js app (app router) to a single-page minimalist landing called "SearchAI" and apply the exact copy & layout changes below. Use Tailwind classes where possible and small custom CSS for the subtle visual effects. Update/create the following files and behaviors:
+
+GOAL COPY (use exactly):
+- Main heading (split on two lines):
+  Line 1: "Creating a one-of-a-kind experience"
+  Line 2: "For your mind"
+- Sub-heading: "Reflect. Grow. Understand yourself deeper."
+- Email placeholder: "Enter your email"
+- Small line directly under the email input: "Limited early access. By invitation only."
+- Footer small line: "Built by thinkers, for thinkers."
+
+SEO META (place in app/layout.tsx metadata or <Head>):
+<title>SearchAI Reflect, Grow, and Understand Yourself Deeper</title>
+<meta name="description" content="SearchAI helps you explore your thoughts through guided conversations. Join the waitlist for a one-of-a-kind introspective AI experience.">
+<meta name="keywords" content="self reflection app, personal growth ai, ai journaling, self awareness tool, ai mental wellness, Ai assisted thinking app, mindful conversation app">
+
+FILES TO UPDATE / CREATE:
+1) app/layout.tsx
+ - Add site-level metadata above.
+ - Ensure global styling import (styles/globals.css or ./globals.css).
+ - Keep the page language and basic body class (bg-black, text colors).
+
+2) app/page.tsx
+ - Replace current hero with centered hero using the **exact** copy above.
+ - Heading should be large, split into two lines. "For your mind" should use a slightly muted gray color (#A0A0A0) vs the main white headline.
+ - Below the heading place the short sub-heading.
+ - Add an email Waitlist component (components/WaitlistForm) with:
+   - rounded input field with placeholder "Enter your email"
+   - large rounded "Join the Waitlist" button
+   - a small text line under the input that reads: "Limited early access. By invitation only."
+ - Ensure the hero and form are vertically centered and responsive (max-width ~700px for text).
+ - Add a subtle absolute background overlay (radial glow) that reacts to mouse movement using CSS variables (JS sets --mx and --my).
+ - All hero elements should have gentle entrance transitions (fade + small translate Y).
+
+3) app/components/WaitlistForm.tsx
+ - Implement as a client component (use client).
+ - Basic validation for email; on success show temporary success state (message) and store locally for demo (localStorage).
+ - Render the "Limited early access. By invitation only." line directly beneath the input (slightly muted).
+ - Add accessible aria attributes.
+
+4) app/components/Header.tsx (or put header in page.tsx)
+ - Navbar layout: left side show the logo (circular mark with initial or small brand wordmark).
+ - Right side show: socials icons (X, Instagram, Reddit/other) **then** the contact email text (clickable mailto: contact@searchai.example or use the email you provided in the image — if the codebase has a specific contact email, use that).
+ - Make social icons small, monochrome, with hover opacity and tiny upward motion on hover.
+ - Make contact email text muted but visible and clickable (mailto).
+
+5) styles/globals.css (or update existing)
+ - Add Inter font import.
+ - Define CSS variables:
+    --bg: #000000
+    --text: #F1F1F1
+    --muted: #A0A0A0
+ - Add .bg-radial-glow that uses radial-gradient driven by --mx/--my for subtle parallax glow.
+ - Add helper classes for fade-in-up animation, focus glow on inputs, and smooth transition utility classes.
+ - Ensure accessible focus outline for keyboard navigation.
+
+ANIMATIONS & INTERACTIVITY (subtle):
+ - Hero text & subheading: fade-in + translateY on load (staggered).
+ - Input: outline-glow on focus (soft white ring).
+ - Button: soft glow & slight scale on hover; smooth transition (0.25–0.4s).
+ - Social icons: small lift & opacity on hover.
+ - Background: radial glow reacts to mouse movement using CSS vars updated in page.tsx (small movement only).
+ - Entrance transitions: 600–800ms, easing cubic-bezier(.2,.9,.2,1), stagger delays for headline, subheading, form.
+ - Keep everything calm — no flashing or heavy motion.
+
+ACCESSIBILITY & RESPONSIVENESS:
+ - Use semantic elements (header, main, footer).
+ - Inputs must have labels / aria-labels.
+ - Ensure readable font sizes on mobile and desktop (use responsive text sizes).
+ - Make layout stack vertically on small screens with appropriate spacing.
+
+EXTRA NOTES:
+ - If Tailwind is used in the repo, keep Tailwind classes; if not, provide plain CSS fallback.
+ - If you use Framer Motion for smoother sequence animations, include a note to install: `npm i framer-motion` and use it only if present. Otherwise use CSS animations.
+ - Keep changes localized to: app/layout.tsx, app/page.tsx, components/WaitlistForm.tsx, components/Header.tsx (optional), styles/globals.css. Keep other files unchanged.
+
+OUTPUT:
+ - Return the full modified files (app/layout.tsx, app/page.tsx, components/WaitlistForm.tsx, components/Header.tsx if created, styles/globals.css).
+ - If additional packages are required (framer-motion), include install commands and where it's used.
+
+Behavior example summary:
+ - Navbar: [ Logo (left) ] — spacer — [ Social icons | contact@searchai.example (right) ]
+ - Hero: Large two-line heading:
+      Creating a one-of-a-kind experience
+      For your mind
+   Sub-heading: Reflect. Grow. Understand yourself deeper.
+   Email input (Enter your email)
+   Join the Waitlist (button)
+   Small muted line under input: Limited early access. By invitation only.
+ - Footer: small copyright + "Built by thinkers, for thinkers."
+
+Make sure all texts match the copy above exactly, and that the layout and subtle interactive transitions follow the calm, minimal style already in the design.
