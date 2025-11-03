@@ -3,9 +3,36 @@
 ## Overview
 SearchAI is a Next.js 16 application that helps users discover self-awareness through guided questions. The app features a waitlist signup integrated with Google Apps Script, comprehensive SEO-optimized pages, and a blog section with dynamic routing.
 
-**Current State:** Successfully migrated from Vercel to Replit, expanded with SEO pages and blog functionality, enhanced with Google site verification, favicon, social media integration, and fully functional dynamic blog routing. Running without errors.
+**Current State:** Minimal landing page redesign complete. The app now features a clean, focused homepage with exact specified copy, enhanced header with favicon logo and social icons, and full accessibility compliance. Running without errors.
 
-## Recent Changes (October 31, 2025)
+## Recent Changes (November 3, 2025)
+
+### Minimal Landing Page Redesign
+- **Complete Homepage Redesign**: Transformed into minimal, focused landing page with exact specified copy
+- **New Header Component**: Created Header.tsx replacing Navigation component with:
+  - Favicon.ico as logo with hover effects
+  - "SearchAI" wordmark (visible on tablet+)
+  - Social icons (X, Instagram, Reddit) with subtle hover animations
+  - Contact email display (responsive)
+- **Exact Copy Implementation**:
+  - Hero: "Creating a one-of-a-kind experience" / "For your mind"
+  - Subheading: "Reflect. Grow. Understand yourself deeper."
+  - Email placeholder: "Enter your email"
+  - Form note: "Limited early access. By invitation only."
+  - Footer: "Built by thinkers, for thinkers."
+- **SEO Updates**: Updated metadata with new title, description, and keywords
+- **Animations & Interactivity**:
+  - Fade-in-up animations with staggered timing
+  - Mouse-tracking radial glow background effect
+  - Input focus glow and button hover effects (scale + shadow)
+  - Respect for prefers-reduced-motion
+- **Accessibility Enhancements**:
+  - Added visually-hidden label for email input
+  - Proper aria-labels on all interactive elements
+  - Focus states on all clickable elements
+  - Screen reader support throughout
+
+## Previous Changes (October 31, 2025)
 
 ### SEO & Social Media Enhancements
 - **Google Site Verification**: Added Google site verification meta tag in metadata export for Search Console verification
@@ -59,8 +86,10 @@ SearchAI is a Next.js 16 application that helps users discover self-awareness th
 │   ├── page.tsx           # Home page
 │   └── globals.css        # Global styles
 ├── components/            # React components
+│   ├── Header.tsx         # Fixed header with logo, social icons, and contact email
 │   ├── contact-form.tsx   # Client-side contact form with validation
-│   └── navigation.tsx     # Responsive navigation component
+│   ├── navigation.tsx     # Legacy navigation (for other pages)
+│   └── waitlist-form.tsx  # Waitlist signup form with accessibility
 ├── hooks/                 # Custom React hooks
 ├── lib/                   # Utility functions
 │   └── blogs.ts           # Blog data and helper functions
@@ -69,10 +98,14 @@ SearchAI is a Next.js 16 application that helps users discover self-awareness th
 ```
 
 ### Key Features
-1. **Landing Page**: Hero section with tagline and waitlist form
+1. **Minimal Landing Page**: Clean, focused design with:
+   - Mouse-tracking background glow effect
+   - Staggered fade-in animations
+   - Accessible waitlist form
+   - Social media integration in header
 2. **Waitlist API**: Server-side endpoint that validates emails and forwards to Google Apps Script
-3. **About Page**: Company mission and vision with SEO metadata
-4. **Services Page**: Three core service offerings displayed in card layout
+3. **About Page**: Company mission and vision with SEO metadata (accessible at /about)
+4. **Services Page**: Three core service offerings displayed in card layout (accessible at /services)
 5. **Contact Page**: Functional contact form with email validation
 6. **Blog System**: 
    - Blog listing page showing all posts with images and descriptions
