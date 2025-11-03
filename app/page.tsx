@@ -40,7 +40,7 @@ export default function Home() {
       )}
 
       {/* Main content */}
-      <div className="w-full max-w-4xl text-center space-y-12 relative z-10">
+      <div className="w-full max-w-4xl text-center space-y-8 relative z-10">
         {/* Brand name - largest text */}
         <div className={`${!prefersReducedMotion ? "animate-fade-in-up" : ""}`}>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
