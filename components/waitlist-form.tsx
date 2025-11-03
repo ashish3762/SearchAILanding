@@ -76,7 +76,7 @@ export default function WaitlistForm() {
       </div>
       
       {/* Small line under input */}
-      <p className="text-xs text-muted-foreground/60 text-center">Limited early access. By invitation only.</p>
+      <p className="text-base text-muted-foreground/70 text-center">Limited early access. By invitation only.</p>
       
       {isSubmitted && (
         <p className="text-sm text-muted-foreground mt-3 animate-fade-in">

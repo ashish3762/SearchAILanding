@@ -3,7 +3,7 @@
 import Link from "next/link"
 
 export default function Header() {
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@searchai.example"
+  const contactEmail = "hello@searchai.com"
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
@@ -12,19 +12,16 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group transition-transform duration-180 hover:scale-103"
+            className="group transition-transform duration-180 hover:scale-103"
             aria-label="SearchAI home"
           >
             <img
               src="/favicon.ico"
               alt="SearchAI logo"
-              width={40}
-              height={40}
+              width={56}
+              height={56}
               className="rounded-full border border-gray-700 transition-all duration-180 group-hover:shadow-[0_0_15px_rgba(145,145,145,0.3)]"
             />
-            <span className="hidden sm:block text-xl font-semibold text-foreground transition-opacity duration-180 group-hover:opacity-80">
-              SearchAI
-            </span>
           </Link>
 
           {/* Right side: Social icons + Contact email */}

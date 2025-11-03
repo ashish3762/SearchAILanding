@@ -41,35 +41,29 @@ export default function Home() {
 
       {/* Main content */}
       <div className="w-full max-w-4xl text-center space-y-12 relative z-10">
+        {/* Brand name - largest text */}
+        <div className={`${!prefersReducedMotion ? "animate-fade-in-up" : ""}`}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+            SearchAI
+          </h1>
+        </div>
+
         {/* Hero heading - staggered animation */}
-        <div className={`space-y-4 ${!prefersReducedMotion ? "animate-fade-in-up" : ""}`}>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight leading-tight">
-            <span className={`block ${!prefersReducedMotion ? "animate-fade-in-up" : ""}`}>
+        <div className={`space-y-3 ${!prefersReducedMotion ? "animate-fade-in-up" : ""}`} style={!prefersReducedMotion ? { animationDelay: "0.1s" } : {}}>
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-light tracking-tight leading-tight">
+            <span className="block">
               Creating a one-of-a-kind experience
             </span>
-            <span
-              className={`block ${!prefersReducedMotion ? "animate-fade-in-up" : ""}`}
-              style={!prefersReducedMotion ? { animationDelay: "0.1s" } : {}}
-            >
+            <span className="block">
               For your mind
             </span>
-          </h1>
-
-          {/* Subheading */}
-          <p
-            className={`text-lg md:text-xl text-muted-foreground/80 font-light max-w-2xl mx-auto ${
-              !prefersReducedMotion ? "animate-fade-in-up" : ""
-            }`}
-            style={!prefersReducedMotion ? { animationDelay: "0.2s" } : {}}
-          >
-            Reflect. Grow. Understand yourself deeper.
-          </p>
+          </h2>
         </div>
 
         {/* Waitlist form */}
         <div
           className={`pt-4 max-w-md mx-auto ${!prefersReducedMotion ? "animate-fade-in-up" : ""}`}
-          style={!prefersReducedMotion ? { animationDelay: "0.3s" } : {}}
+          style={!prefersReducedMotion ? { animationDelay: "0.2s" } : {}}
         >
           <WaitlistForm />
         </div>
