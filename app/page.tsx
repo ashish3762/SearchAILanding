@@ -28,7 +28,7 @@ export default function Home() {
   }, [prefersReducedMotion])
 
   return (
-    <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
+  <main className="bg-background text-foreground flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden" style={{ height: "calc(100vh - 64px)" }}>
       {/* Background radial glow that follows mouse */}
       {!prefersReducedMotion && (
         <div

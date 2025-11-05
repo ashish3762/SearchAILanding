@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={`${inter.className} font-sans antialiased bg-background text-foreground`}>
         <Header />
         {children}
-        <footer className="border-t border-border px-4 py-8 md:py-12">
+        <footer className="border-t border-border">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               {/* Copyright */}
