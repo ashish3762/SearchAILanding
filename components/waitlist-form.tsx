@@ -38,12 +38,11 @@ export default function WaitlistForm() {
         setEmail("")
         setTimeout(() => setIsSubmitted(false), 5000)
       } else {
-        const errorData = await response.json().catch(() => ({}))
-        setError(errorData.error || "Something went wrong. Please try again.")
+        setError("Request failed — please try again.")
       }
     } catch (err) {
       console.error("Submission error:", err)
-      setError("Network error. Please check your connection and try again.")
+      setError("Request failed — please try again.")
     } finally {
       setIsLoading(false)
     }
@@ -71,7 +70,7 @@ export default function WaitlistForm() {
           disabled={isLoading || !email}
           className="bg-foreground text-background hover:bg-foreground/90 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all duration-180 whitespace-nowrap"
         >
-          {isLoading ? "Joining..." : "Join the waitlist"}
+          {isLoading ? "Requesting..." : "Request invite"}
         </Button>
       </div>
       
@@ -80,7 +79,7 @@ export default function WaitlistForm() {
       
       {isSubmitted && (
         <p className="text-sm text-muted-foreground mt-3 animate-fade-in">
-          ✓ You're on the list. We can't wait to show you what's coming.
+          Invite requested, our team will get back to you.
         </p>
       )}
       {error && <p className="text-sm text-destructive mt-3">{error}</p>}

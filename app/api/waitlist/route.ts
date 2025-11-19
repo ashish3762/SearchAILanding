@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Get Google Apps Script URL from environment variable
+    // Note: Ensure Google Apps Script is configured to send emails to hello@trysearch.ai
     const scriptUrl = process.env.GOOGLE_APPS_SCRIPT_URL
     if (!scriptUrl) {
       console.error('GOOGLE_APPS_SCRIPT_URL environment variable is not set')

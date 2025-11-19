@@ -1,11 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, DM_Serif_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import Header from "@/components/Header"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
+const dmSerifDisplay = DM_Serif_Display({ 
+  weight: '400',
+  style: 'italic',
+  subsets: ["latin"],
+  variable: '--font-dm-serif'
+})
 
 export const metadata: Metadata = {
   title: "SearchAI Reflect, Grow, and Understand Yourself Deeper",
@@ -32,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} font-sans antialiased bg-background text-foreground`}>
+      <body className={`${inter.className} ${dmSerifDisplay.variable} font-sans antialiased bg-background text-foreground`}>
         <Header />
         {children}
         <footer className="border-t border-border">
