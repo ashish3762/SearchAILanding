@@ -3,6 +3,10 @@
 # dependencies
 /node_modules
 
+.local
+.local-env.json
+
+
 # next.js
 /.next/
 /out/

@@ -38,7 +38,7 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-2 text-center">
                 <h3 className="text-sm tracking-widest uppercase text-muted-foreground">Email</h3>
-                <p className="font-light text-foreground/80">hello@searchai.com</p>
+                <p className="font-light text-foreground/80">hello@trysearch.ai</p>
               </div>
               <div className="space-y-2 text-center">
                 <h3 className="text-sm tracking-widest uppercase text-muted-foreground">Response Time</h3>
