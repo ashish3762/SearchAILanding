@@ -3,9 +3,28 @@
 ## Overview
 SearchAI is a Next.js 16 application that helps users discover self-awareness through guided questions. The app features a waitlist signup integrated with Google Apps Script, comprehensive SEO-optimized pages, and a blog section with dynamic routing.
 
-**Current State:** Minimal landing page redesign complete. The app now features a clean, focused homepage with exact specified copy, enhanced header with favicon logo and social icons, and full accessibility compliance. Running without errors.
+**Current State:** Minimal landing page with enhanced typography, updated CTA copy, subtle 90s-tech vintage gradient background, and refined messaging. Running without errors.
 
-## Recent Changes (November 3, 2025)
+## Recent Changes (November 19, 2025)
+
+### Typography & Design Enhancements
+- **DM Serif Display Italic Font**: Added Google Font DM Serif Display in italic style to the h2 heading "Creating a one-of-a-kind experience for your mind"
+- **90s-Tech Vintage Background**: Implemented subtle gradient background with:
+  - Multi-layered gradients (purple, blue, pink tones at very low opacity)
+  - Repeating linear gradient for subtle texture/scan-line effect
+  - Fixed positioning with proper z-indexing
+  - Maintained accessibility and contrast for readability
+
+### Waitlist Form Updates
+- **Updated CTA Button Text**: Changed from "Join the waitlist" to "Request invite" (default state)
+- **Loading State**: Changed from "Joining..." to "Requesting..." (while request in progress)
+- **Success Message**: Changed to "Invite requested, our team will get back to you."
+- **Error Message**: Unified error messaging to "Request failed — please try again."
+
+### Email Configuration
+- **Email Destination**: Updated API route documentation to note emails should be sent to hello@trysearch.ai (Google Apps Script configuration required)
+
+## Previous Changes (November 3, 2025)
 
 ### Minimal Landing Page Redesign
 - **Complete Homepage Redesign**: Transformed into minimal, focused landing page with exact specified copy
