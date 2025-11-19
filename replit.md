@@ -8,7 +8,7 @@ SearchAI is a Next.js 16 application that helps users discover self-awareness th
 ## Recent Changes (November 19, 2025)
 
 ### Typography & Design Enhancements
-- **DM Serif Display Italic Font**: Added Google Font DM Serif Display in italic style to the h2 heading "Creating a one-of-a-kind experience for your mind"
+- **Modern Typography**: Updated h2 heading "Creating a one-of-a-kind experience for your mind" with extra-light font weight and wider letter spacing for a sleek, modern, futuristic aesthetic
 - **90s-Tech Vintage Background**: Implemented subtle gradient background with:
   - Multi-layered gradients (purple, blue, pink tones at very low opacity)
   - Repeating linear gradient for subtle texture/scan-line effect
