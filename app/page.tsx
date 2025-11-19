@@ -50,7 +50,7 @@ export default function Home() {
 
         {/* Hero heading - staggered animation */}
         <div className={`space-y-3 ${!prefersReducedMotion ? "animate-fade-in-up" : ""}`} style={!prefersReducedMotion ? { animationDelay: "0.1s" } : {}}>
-          <h2 className="text-l md:text-xl lg:text-2xl tracking-tight leading-tight font-[family-name:var(--font-dm-serif)]">
+          <h2 className="text-l md:text-xl lg:text-2xl tracking-tight leading-tight font-normal font-[family-name:var(--font-dm-serif)]">
             <span className="block">
               Creating a one-of-a-kind experience for your mind
             </span>
