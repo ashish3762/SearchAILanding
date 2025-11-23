@@ -41,13 +41,13 @@ export default function RootLayout({
       <body className={`${inter.className} ${dmSerifDisplay.variable} font-sans antialiased bg-background text-foreground`}>
         <Header />
         {children}
-        <footer className="border-t border-border">
+        <footer className="border-t border-border py-4 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-              {/* Copyright */}
-              <p className="text-sm text-muted-foreground">© 2025 SearchAI. All rights reserved.</p>
               {/* Tagline */}
               <p className="text-sm text-muted-foreground">Built by thinkers, for thinkers.</p>
+              {/* Copyright */}
+              <p className="text-sm text-muted-foreground">© 2025 SearchAI. All rights reserved.</p>
             </div>
           </div>
         </footer>
